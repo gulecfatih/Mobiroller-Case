@@ -4,7 +4,12 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/gulec/AndroidStudioProjects/Mobiroller/app/src/main/res/layout/activity_main.xml" value="0.1793478260869565" />
-        <entry key="..\:/Users/gulec/Documents/Github/Mobiroller-Case/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/gulec/Documents/Github/Mobiroller-Case/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/gulec/Documents/Github/Mobiroller-Case/app/src/main/res/layout/activity_product_entry.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/gulec/Documents/Github/Mobiroller-Case/app/src/main/res/layout/activity_product_list.xml" value="0.24010416666666667" />
+        <entry key="..\:/Users/gulec/Documents/Github/Mobiroller-Case/app/src/main/res/layout/home_page.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/gulec/Documents/Github/Mobiroller-Case/app/src/main/res/layout/product_entrty.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/gulec/Documents/Github/Mobiroller-Case/app/src/main/res/layout/product_entry.xml" value="0.25416666666666665" />
       </map>
     </option>
   </component>
