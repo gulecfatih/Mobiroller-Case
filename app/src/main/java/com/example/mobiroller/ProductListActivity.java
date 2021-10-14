@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.firebase.database.DataSnapshot;
@@ -22,12 +23,15 @@ public class ProductListActivity extends AppCompatActivity {
     List<ProductListModel> productListModels = new ArrayList<>();
     RecyclerView recyclerView;
     ProductListAdapter productListAdapter;
+    String Category;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_product_list);
         init();
+        Intent intent = getIntent();
+        Category = intent.getStringExtra("category");
 
 
         RecyclerView();
