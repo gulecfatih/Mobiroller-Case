@@ -16,11 +16,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_home_page);
 
         Button productEntryButton = findViewById(R.id.productEntry);
-        Button productListingButton = findViewById(R.id.productListing);
+        Button productListingButton = findViewById(R.id.categoryList);
 
         productEntryButton.setOnClickListener(this);
         productListingButton.setOnClickListener(this);
-
     }
 
     @Override
@@ -29,8 +28,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.productEntry:
                 startActivity( new Intent(MainActivity.this,ProductEntryActivity.class));
                 break;
-            case R.id.productListing:
-                startActivity( new Intent(MainActivity.this,ProductListActivity.class));
+            case R.id.categoryList:
+                startActivity( new Intent(MainActivity.this,CategoryListActivity.class));
                 break;
         }
     }
