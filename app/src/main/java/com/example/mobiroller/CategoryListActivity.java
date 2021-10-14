@@ -18,6 +18,7 @@ import java.util.List;
 
 public class CategoryListActivity extends AppCompatActivity {
 
+    DatabaseReference databaseReference;
     List<CategoryListModel> categoryLists = new ArrayList<>();
     RecyclerView recyclerView;
     CategoryListAdapter categoryListAdapter;
@@ -28,7 +29,24 @@ public class CategoryListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category_list);
         init();
+        databaseReference = FirebaseDatabase.getInstance().getReference("Category");
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot dataSnapshot:snapshot.getChildren()){
 
+
+                    CategoryListModel categoryListModel = new CategoryListModel(dataSnapshot.getKey()
+                            ,dataSnapshot.child("img_ctg").getValue().toString());
+                    categoryLists.add(categoryListModel);
+                }
+                RecyclerView();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+            }
+        });
 
     }
 
