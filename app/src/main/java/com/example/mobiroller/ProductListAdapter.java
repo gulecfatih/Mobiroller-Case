@@ -1,6 +1,7 @@
 package com.example.mobiroller;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -41,6 +43,25 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
         Glide.with(context)
                 .load(list.get(position).get_img())
                 .into(holder.imageView);
+
+        String productName = list.get(position).get_productName();
+        int price = list.get(position).get_price();
+        String productDescription = list.get(position).get_productDescription();
+        String uploadTime = list.get(position).get_uploadTime();
+        String img = list.get(position).get_img();
+        holder.cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent =new Intent(context,DetailScreenActivity.class);
+                intent.putExtra("productName",productName );
+                intent.putExtra("price",price );
+                intent.putExtra("productDescription",productDescription );
+                intent.putExtra("uploadTime",uploadTime );
+                intent.putExtra("img",img );
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -55,6 +76,7 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
         TextView uploadDate;
         TextView price;
         ImageView imageView;
+        CardView cardView;
         public ViewHolder(@NonNull View itemView){
 
             super(itemView);
@@ -64,6 +86,7 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
             uploadDate =itemView.findViewById(R.id.uploadDate);
             price =itemView.findViewById(R.id.price);
             imageView =itemView.findViewById(R.id.productImage);
+            cardView = itemView.findViewById(R.id.productCardView);
 
         }
 

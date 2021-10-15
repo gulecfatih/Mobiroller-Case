@@ -46,14 +46,10 @@ public class ProductListActivity extends AppCompatActivity {
                         String productDescription = dataSnapshot.child("Description").getValue().toString();
                         String uploadTime = dataSnapshot.child("Upload date").getValue().toString();
                         String img = dataSnapshot.child("img_ctg").getValue().toString();
-                        
 
                         ProductListModel productListModels = new ProductListModel(productName,price,productDescription,uploadTime,Category,img);
                         productModels.add(productListModels);
                     }
-
-
-
                 }
                 RecyclerView();
             }
