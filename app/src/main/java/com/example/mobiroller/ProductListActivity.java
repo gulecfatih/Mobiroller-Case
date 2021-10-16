@@ -30,7 +30,12 @@ public class ProductListActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_product_list);
         init();
+        FirebaseExtractionData();
 
+
+    }
+
+    void FirebaseExtractionData(){
         databaseReference = FirebaseDatabase.getInstance().getReference("Category").child(Category);
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -41,7 +46,7 @@ public class ProductListActivity extends AppCompatActivity {
                         // if kullanma sebebimiz kategorinin resmini child olarak tutuyoruz ve
                         // resmin olduğu düğümüde kategori sanıyor onu engellemek için if kullandık
                         String productName = dataSnapshot.getKey().toString();
-                        int price =Integer.parseInt(dataSnapshot.child("Price").getValue().toString());
+                        String price =dataSnapshot.child("Price").getValue().toString();
                         String productDescription = dataSnapshot.child("Description").getValue().toString();
                         String uploadTime = dataSnapshot.child("Upload date").getValue().toString();
                         String img = dataSnapshot.child("img_ctg").getValue().toString();
@@ -52,14 +57,10 @@ public class ProductListActivity extends AppCompatActivity {
                 }
                 RecyclerView();
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-
             }
         });
-
-
     }
 
     void RecyclerView(){

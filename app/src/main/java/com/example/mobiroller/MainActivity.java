@@ -10,14 +10,15 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
+    Button productEntryButton;
+    Button productListingButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
 
-        Button productEntryButton = findViewById(R.id.productEntry);
-        Button productListingButton = findViewById(R.id.categoryList);
 
+        init();
         productEntryButton.setOnClickListener(this);
         productListingButton.setOnClickListener(this);
     }
@@ -32,5 +33,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity( new Intent(MainActivity.this,CategoryListActivity.class));
                 break;
         }
+    }
+
+   void init(){
+        productEntryButton = findViewById(R.id.productEntry);
+        productListingButton = findViewById(R.id.categoryList);
     }
 }

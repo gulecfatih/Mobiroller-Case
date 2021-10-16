@@ -39,14 +39,14 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
     holder.productDescription.setText(list.get(position).get_productDescription());
     holder.categoryName.setText(list.get(position).get_category());
     holder.uploadDate.setText(list.get(position).get_uploadTime());
-    holder.price.setText(String.valueOf(list.get(position).get_price()));
+    holder.price.setText("Price: " +list.get(position).get_price());
         Glide.with(context)
                 .load(list.get(position).get_img())
                 .into(holder.imageView);
 
         String productName = list.get(position).get_productName();
         String productDescription = list.get(position).get_productDescription();
-        int price = list.get(position).get_price();
+        String price = list.get(position).get_price();
         String categoryName = list.get(position).get_category();
         String uploadTime = list.get(position).get_uploadTime();
         String img = list.get(position).get_img();

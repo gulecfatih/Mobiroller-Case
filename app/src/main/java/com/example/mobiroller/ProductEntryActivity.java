@@ -7,11 +7,35 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class ProductEntryActivity extends AppCompatActivity {
+public class ProductEntryActivity extends AppCompatActivity implements View.OnClickListener {
+
+    Button categoryDataEntryButton;
+    Button productDataEntryButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product_entry);
+        init();
+        categoryDataEntryButton.setOnClickListener(this);
+        productDataEntryButton.setOnClickListener(this);
     }
+
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.categoryDataEntry:
+                startActivity( new Intent(ProductEntryActivity.this,CategoryDataEntryActivity.class));
+                break;
+            case R.id.productDataEntry:
+                startActivity( new Intent(ProductEntryActivity.this,ProductDataEntryActivity.class));
+                break;
+        }
+    }
+   void init(){
+        categoryDataEntryButton = findViewById(R.id.categoryDataEntry);
+        productDataEntryButton = findViewById(R.id.productDataEntry);
+    }
+
 }

@@ -6,5 +6,22 @@
     android:layout_height="match_parent"
     tools:context=".ProductEntryActivity">
 
+    <Button
+        android:text="Category data entry"
+        android:id="@+id/categoryDataEntry"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true">
+
+
+    </Button>
+    <Button
+        android:text="Product data entry"
+        android:id="@+id/productDataEntry"
+        android:layout_below="@+id/categoryDataEntry"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp">
+    </Button>
 
 </RelativeLayout>

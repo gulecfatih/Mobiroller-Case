@@ -29,6 +29,11 @@ public class CategoryListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category_list);
         init();
+        FirebaseExtractionData();
+
+    }
+
+    void FirebaseExtractionData(){
         databaseReference = FirebaseDatabase.getInstance().getReference("Category");
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -47,7 +52,6 @@ public class CategoryListActivity extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError error) {
             }
         });
-
     }
 
      void RecyclerView(){
