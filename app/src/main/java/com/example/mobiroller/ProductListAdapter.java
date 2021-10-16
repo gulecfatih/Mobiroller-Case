@@ -45,10 +45,12 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
                 .into(holder.imageView);
 
         String productName = list.get(position).get_productName();
-        int price = list.get(position).get_price();
         String productDescription = list.get(position).get_productDescription();
+        int price = list.get(position).get_price();
+        String categoryName = list.get(position).get_category();
         String uploadTime = list.get(position).get_uploadTime();
         String img = list.get(position).get_img();
+
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -56,8 +58,9 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
                 Intent intent =new Intent(context,DetailScreenActivity.class);
                 intent.putExtra("productName",productName );
                 intent.putExtra("price",price );
+                intent.putExtra("categoryName",categoryName );
                 intent.putExtra("productDescription",productDescription );
-                intent.putExtra("uploadTime",uploadTime );
+                intent.putExtra("uploadDate",uploadTime );
                 intent.putExtra("img",img );
                 context.startActivity(intent);
             }

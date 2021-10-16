@@ -30,8 +30,7 @@ public class ProductListActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_product_list);
         init();
-        Intent intent = getIntent();
-        Category = intent.getStringExtra("category");
+
         databaseReference = FirebaseDatabase.getInstance().getReference("Category").child(Category);
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -70,6 +69,8 @@ public class ProductListActivity extends AppCompatActivity {
     }
 
     void init(){
+        Intent intent = getIntent();
+        Category = intent.getStringExtra("category");
         recyclerView = findViewById(R.id.productRecylerview);
     }
 
