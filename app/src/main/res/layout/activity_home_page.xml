@@ -9,7 +9,7 @@
     <Button
         android:text="Product Entry"
         android:id="@+id/productEntry"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"></Button>
 
@@ -18,7 +18,7 @@
         android:id="@+id/categoryList"
         android:layout_marginTop="40dp"
         android:layout_below="@+id/productEntry"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         ></Button>
