@@ -4,11 +4,13 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/gulec/AndroidStudioProjects/Mobiroller/app/src/main/res/layout/activity_main.xml" value="0.1793478260869565" />
+        <entry key="..\:/Users/gulec/Documents/Github/Mobiroller-Case/app/src/main/res/layout/activity_category_data_entry.xml" value="0.144" />
         <entry key="..\:/Users/gulec/Documents/Github/Mobiroller-Case/app/src/main/res/layout/activity_category_list.xml" value="0.13020833333333334" />
         <entry key="..\:/Users/gulec/Documents/Github/Mobiroller-Case/app/src/main/res/layout/activity_category_list2.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/gulec/Documents/Github/Mobiroller-Case/app/src/main/res/layout/activity_detail_screen.xml" value="0.264" />
         <entry key="..\:/Users/gulec/Documents/Github/Mobiroller-Case/app/src/main/res/layout/activity_home_page.xml" value="0.13020833333333334" />
         <entry key="..\:/Users/gulec/Documents/Github/Mobiroller-Case/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/gulec/Documents/Github/Mobiroller-Case/app/src/main/res/layout/activity_product_data_entry.xml" value="0.136" />
         <entry key="..\:/Users/gulec/Documents/Github/Mobiroller-Case/app/src/main/res/layout/activity_product_entry.xml" value="0.152" />
         <entry key="..\:/Users/gulec/Documents/Github/Mobiroller-Case/app/src/main/res/layout/activity_product_list.xml" value="0.24010416666666667" />
         <entry key="..\:/Users/gulec/Documents/Github/Mobiroller-Case/app/src/main/res/layout/category_list_cardview.xml" value="0.25416666666666665" />
