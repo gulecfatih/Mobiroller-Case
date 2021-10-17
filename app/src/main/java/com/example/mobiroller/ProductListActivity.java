@@ -2,11 +2,15 @@ package com.example.mobiroller;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.inputmethod.EditorInfo;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -24,6 +28,7 @@ public class ProductListActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     ProductListAdapter productListAdapter;
     String Category;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,6 +58,7 @@ public class ProductListActivity extends AppCompatActivity {
 
                         ProductListModel productListModels = new ProductListModel(productName,price,productDescription,uploadTime,Category,img);
                         productModels.add(productListModels);
+
                     }
                 }
                 RecyclerView();
@@ -75,5 +81,30 @@ public class ProductListActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.productRecylerview);
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu,menu);
+        MenuItem item =menu.findItem(R.id.action_search);
+        SearchView searchView = (SearchView) item.getActionView();
 
+        searchView.setImeOptions(EditorInfo.IME_ACTION_DONE);
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener()
+
+
+
+        {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                    return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                productListAdapter.getFilter().filter(newText);
+                return false;
+            }
+        });
+
+        return super.onCreateOptionsMenu(menu);
+    }
 }
