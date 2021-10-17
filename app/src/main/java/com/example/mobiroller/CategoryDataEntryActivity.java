@@ -36,12 +36,10 @@ public class CategoryDataEntryActivity extends AppCompatActivity {
                         FirebaseAdd();
                         EditTextClear();
                         Toast.makeText(getApplicationContext(), "Category Created",Toast.LENGTH_LONG).show();
-
                     }
                     else{
                         Toast.makeText(getApplicationContext(), "Image Link Not Entered",Toast.LENGTH_LONG).show();
                     }
-
                 }
                 else{
                     Toast.makeText(getApplicationContext(), "No Data Entered",Toast.LENGTH_LONG).show();
@@ -72,7 +70,5 @@ public class CategoryDataEntryActivity extends AppCompatActivity {
         CategoryButton = findViewById(R.id.categoryDataButton);
         CategoryData = findViewById(R.id.editCategoryData);
         CategoryImage = findViewById(R.id.editImage);
-
-
     }
 }

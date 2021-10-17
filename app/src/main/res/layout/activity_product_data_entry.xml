@@ -123,7 +123,7 @@
     <Button
         android:id="@+id/productDataButton"
         android:layout_marginTop="40dp"
-        android:text="create category"
+        android:text="create Product"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
