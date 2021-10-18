@@ -12,9 +12,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Mobiroller">
         <activity
-            android:name=".ProductDeleteActivity"
-            android:exported="true" />
-        <activity
             android:name=".CategoryDeleteActivity"
             android:exported="true" />
         <activity

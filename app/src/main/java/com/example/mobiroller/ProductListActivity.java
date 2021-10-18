@@ -47,6 +47,7 @@ public class ProductListActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot dataSnapshot:snapshot.getChildren()){
 
+
                     if(!dataSnapshot.getKey().toString().equals("img_ctg")){
                         // if kullanma sebebimiz kategorinin resmini child olarak tutuyoruz ve
                         // resmin olduğu düğümüde kategori sanıyor onu engellemek için if kullandık

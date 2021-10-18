@@ -32,15 +32,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp">
     </Button>
-    <Button
-
-        android:text="Product data delete"
-        android:id="@+id/productDataDelete"
-        android:layout_below="@+id/categoryDataDelete"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp">
-    </Button>
 
 
 

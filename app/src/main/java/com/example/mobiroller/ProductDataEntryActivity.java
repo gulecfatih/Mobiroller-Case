@@ -56,7 +56,7 @@ public class ProductDataEntryActivity extends AppCompatActivity {
                             if(image!=null && !image.equals("")){
 
                                 FirebaseAdd();
-                                EditTextClear();
+
                                 Toast.makeText(getApplicationContext(), "Product Added",Toast.LENGTH_LONG).show();
                             }
                             else Toast.makeText(getApplicationContext(), "Image Link Not Entered",Toast.LENGTH_LONG).show();
@@ -85,15 +85,37 @@ public class ProductDataEntryActivity extends AppCompatActivity {
          image = ImageEdit.getText().toString();
      }
 
-     void FirebaseAdd(){
 
-         String currentDate = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
-         FirebaseDatabase database = FirebaseDatabase.getInstance();
-         DatabaseReference myRef = database.getReference("Category").child(FirebaseCategory).child(productName);
-         myRef.child("Description").setValue(description);
-         myRef.child("Price").setValue(price);
-         myRef.child("Upload date").setValue(currentDate);
-         myRef.child("img_ctg").setValue(image);
+
+
+    public static boolean isInteger(String s, int radix) {
+        if(s.isEmpty()) return false;
+        for(int i = 0; i < s.length(); i++) {
+            if(i == 0 && s.charAt(i) == '-') {
+                if(s.length() == 1) return false;
+                else continue;
+            }
+            if(Character.digit(s.charAt(i),radix) < 0) return false;
+        }
+        return true;
+    }
+
+     void FirebaseAdd(){
+         boolean priceboll =isInteger(price,10);
+         if(priceboll){
+             String currentDate = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
+             FirebaseDatabase database = FirebaseDatabase.getInstance();
+             DatabaseReference myRef = database.getReference("Category").child(FirebaseCategory).child(productName);
+             myRef.child("Description").setValue(description);
+             myRef.child("Price").setValue(price);
+             myRef.child("Upload date").setValue(currentDate);
+             myRef.child("img_ctg").setValue(image);
+             EditTextClear();
+         }
+         else{
+              Toast.makeText(getApplicationContext(), "enter the price value as a number",Toast.LENGTH_LONG).show();
+         }
+
 
      }
 

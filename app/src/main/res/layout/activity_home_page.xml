@@ -11,7 +11,9 @@
         android:id="@+id/productEntry"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"></Button>
+        android:layout_centerInParent="true">
+
+    </Button>
 
     <Button
         android:text="Category Listing"
@@ -20,7 +22,8 @@
         android:layout_below="@+id/productEntry"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        ></Button>
+        android:layout_centerInParent="true">
+
+    </Button>
 
 </RelativeLayout>

@@ -22,7 +22,7 @@ public class ProductEntryActivity extends AppCompatActivity implements View.OnCl
         categoryDataEntryButton.setOnClickListener(this);
         productDataEntryButton.setOnClickListener(this);
         categoryDataDeleteButton.setOnClickListener(this);
-        productDataDeleteButton.setOnClickListener(this);
+
     }
 
 
@@ -38,9 +38,6 @@ public class ProductEntryActivity extends AppCompatActivity implements View.OnCl
             case R.id.categoryDataDelete:
                 startActivity( new Intent(ProductEntryActivity.this,CategoryDeleteActivity.class));
                 break;
-            case R.id.productDataDelete:
-                startActivity( new Intent(ProductEntryActivity.this,ProductDeleteActivity.class));
-                break;
 
         }
     }
@@ -48,7 +45,6 @@ public class ProductEntryActivity extends AppCompatActivity implements View.OnCl
         categoryDataEntryButton = findViewById(R.id.categoryDataEntry);
         productDataEntryButton = findViewById(R.id.productDataEntry);
         categoryDataDeleteButton = findViewById(R.id.categoryDataDelete);
-        productDataDeleteButton=findViewById(R.id.productDataDelete);
 
     }
 
